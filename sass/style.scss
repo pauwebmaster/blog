@@ -1,0 +1,937 @@
+@import "_materialize.scss";
+
+/*
+*
+*  NAVBAR 
+*
+*/
+nav{
+
+	box-shadow: none !important;
+	//background: none;
+	//position: absolute;
+
+
+
+}
+
+.navbar{
+
+	display: flex !important;
+	justify-content: center !important;
+	//background:#213b45;
+	padding: 0px 6vw;
+	//background: none;
+
+	.nav-right-button{
+		display: flex;
+		align-items:center;
+	}
+
+	.sideNavMenu{
+		height: 100%;
+		margin-right: 4vw;
+		cursor: pointer;
+
+	}
+
+	svg {
+		fill: red;
+	}
+	
+	.logo{
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	i{
+		color: whitesmoke;
+		font-size: 30px;
+	}
+	button{
+		background: none;
+		color: whitesmoke;
+		border: 1px solid whitesmoke;
+		border-radius: 20px;
+		text-transform:capitalize;
+		font-size: 1.2em;
+		text-align: center;
+		line-height: initial;
+
+	}
+	.loginOut{
+		background: none;
+		color: whitesmoke;
+		border: 1px solid whitesmoke;
+		border-radius: 20px;
+		text-transform:capitalize;
+		font-size: 1.2em;
+		text-align: center;
+		line-height: 31px;
+	}
+}
+
+.navSearchD{
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	width: 45vw;
+	height: inherit;
+	margin: 0 auto;
+	padding: 0px 10px;
+	.navSearch{
+		width: 90% !important;
+		color:white;
+	}
+
+
+
+	&:before{
+		content: "{";
+   // position: absolute;
+   // left: 0;
+   font-size: 50px;
+   line-height: normal;
+   color: whitesmoke;
+   display: contents;
+   font-weight: 300;
+}
+&:after{
+	content: "}";
+   // position: absolute;
+   // right: 0;
+   font-size: 50px;
+   line-height: normal;
+   color:whitesmoke;
+   display: contents;
+   font-weight: 300;
+
+}
+}
+
+/*
+*
+*
+* SİDEBAR
+*
+*/
+.indexSideNavMenu{
+
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-flow:column;
+
+
+	/*other*/
+	.collection-item{
+			margin: 10px  0;
+			border-radius: 35px;
+
+			i{
+				font-size: 1.5em;
+				margin-right: 8px;
+			}
+		}
+	
+	.sidenavUsersInfo{
+		width: 100%;
+		height: 30vh;
+		font-size: 7em;
+		display: flex;
+		justify-content:center;
+		align-items:center;
+		color:white;
+		flex-direction: column;
+
+		img{
+			filter: drop-shadow(0mm 0mm 2mm grey);
+
+		}
+		.userIMG{
+			border-radius: 50%;
+			width: 10vw;
+
+
+		}
+
+		.sidenavUserName{
+			font-size: 2rem;
+			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
+
+		}
+
+	}
+	.sidenavUserMenu
+	{
+		display: flex;
+		justify-content:center;
+		color: white;
+		    font-size: 1em;
+
+	.sidenav_writers{	
+		background: #3E271F !important;
+    border-radius: 35px;
+    box-shadow: 0px 0px 10px 2px grey, 0px 0px 6px 0px whitesmoke;}
+	}
+
+	.indexSideNavCategories
+	{
+		background:none !important;
+		display: flex;
+		justify-content: start;
+		align-items: end;
+		flex-direction: column;
+		
+h5{    color: white;
+    font-family: cursive;
+    font-size: 1.44rem;
+}
+		
+		
+
+
+	}
+
+	.sideNavFooter
+	{
+		position: absolute;
+		width: 100%;
+		bottom: 35px;
+		height: auto;
+		margin: 0 auto;
+	//color: #fff;
+	ul{
+		display: flex;
+		justify-content:space-around;
+		text-align: center;
+	}
+	li{
+		float: left;
+	}
+}
+}
+
+/*
+*
+*
+* CONTENT-BANNER
+*
+*/
+
+#particles-js{ 
+	position:absolute;
+	width: 100%; 
+	height: 100%;
+	background-color: #b61924;
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-size: cover; 
+	background-position: 50% 50%; }
+
+	.placeholder
+	{
+		display: block;
+		width: 100%;
+		height: 60vh;
+	}
+	.indexContentMainCard
+	{
+		display: flex;
+		justify-content:space-around;
+		.mainCard{
+			display: flex;
+			justify-content:center;
+			margin-bottom: 5vh;
+		}
+	}
+
+
+	.index-banner{
+/*position*/
+width: 100vw;
+height: 50vh;
+position: absolute;
+top: 0;
+z-index: -1;
+#indexCanvasBanner {
+
+	display: block;
+	width: 100%;
+	height: 100%;
+
+}
+
+#particles-js{
+	bottom: 0;
+	position: absolute;
+	height: 85%;
+	background: none;
+}
+}
+
+#sidenavCanvasBanner{
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+/*
+*
+* İNDEX-CONTENT
+*
+*/
+@font-face {
+	font-family: 'Neutra';
+  src: url('neutra-text/NeutraText-Bold.otf')  /* IE9 Compat Modes */
+
+}
+//gradiend card color:
+$CardBGcolor-1:#F0DB4F;
+$CardBGcolor-2:#CAC531;
+.container
+{
+
+	background: white;
+	//height: 90vh;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.indexCardNew{
+	/*positon*/
+	width: 300px;
+	height: 147px;
+	position: relative;
+/*theme*/
+border-radius:15px; 
+overflow: hidden;
+background: -webkit-linear-gradient(to bottom, $CardBGcolor-1,$CardBGcolor-2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, $CardBGcolor-1,$CardBGcolor-2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+.indexCardBG{
+	background-image: url("../img/cardBG.svg");
+	filter: drop-shadow(-1mm -3mm 1mm rgba(0, 0, 0, 0.24));
+
+	width: 100%;
+	height: 100%;
+	padding: 2% 6%;
+
+	.indexType{
+		font-family: "Neutra";
+		position: absolute;
+		width: 65px;
+		height: 50px;
+		font-size: 1.3rem;
+		font-weight: 600;
+		color:#323330;
+		right: 0;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	h5{
+		font-size: 100%;
+		text-transform: capitalize;
+		font-weight: bold;
+		margin: 5px;
+		display: block;
+		width: 71%;
+		padding-left: 5px;
+	}
+	.indexUsers{
+		margin: 0;
+		color: grey;
+		font-size: 0.7rem;
+	}
+	.indexContent{
+		margin-top:5px;
+		text-align: left;
+		font-size: 0.8rem;
+		padding-right: 10px;
+	}
+	.indexSave{
+		position: absolute;
+		width: 75px;
+		height: 90px;
+		font-size: 35px;
+		font-weight: 600;
+		color:grey;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+}
+}
+/*
+*
+*  TREND CARD
+*
+*/
+
+.indexTrendCard
+{
+	border-left: 1px solid black;
+}
+/*
+*
+*      LOGİN CARD
+*
+*/
+
+$login-color:#436d73;
+$form-login-icon:#436d73;
+$form-login-button:#436d73;
+
+/*input*/
+$label-color:#000;          // üstünde olan label
+$label-focus-color:#000; //küçüldüğünde
+$form-icon-focus-color:#000;
+$caret-color:#436d73; //imleç rengi
+
+/*github gelene kadar*/
+.isDisabled {
+	pointer-events:none;
+	
+}
+
+body {
+ /*position*/
+ overflow-x:hidden; 
+ 
+/*theme*/
+background-color: white;
+}
+#close{
+	/*positon*/
+	width: 35px;
+	height: 35px;
+	top: 10px;
+	right: 10px;
+	position: absolute;
+	/*theme*/
+	cursor: default;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background: #ea4335;
+	border-radius: 32%;
+	align-items: center;
+	color: #fff;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+/*.loginCenter{
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}*/
+
+.errForm{
+	position: relative;
+	top: -0.5rem;
+	left: 3rem;
+	font-size: 0.8rem;
+	color: #FF4081;
+	-webkit-transform: translateY(0%);
+	-ms-transform: translateY(0%);
+	-o-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.login-block{
+
+/*position*/
+width: 30vw;
+max-height: 93vh;
+margin: auto;
+border-radius: 10px;
+overflow: hidden;
+padding: 1.5% 4%;
+
+/*theme*/
+position: relative;
+background: #fff;
+display: none;
+
+/*other*/
+
+
+#loading{
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 5px;
+    //visibility: hidden;
+    display: none;
+}
+h1{
+	margin: 0 auto;
+	color: $login-color;
+	font-family: 'Poppins', sans-serif;
+	font-size: 39px;
+	line-height: 1.2;
+	text-align: center;
+}
+.form-brackets {    
+/*position*/
+width: 85%;
+margin: 15px auto; 
+
+	/*theme*/
+	text-align: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	line-height: 0.1em;
+
+  /*other*/
+  span {font-size: 0.8rem; background:#fff; padding:0 10px; color: rgba(0,0,0,0.54);}
+
+} 
+
+.users-loginButton{
+/*positon*/
+/*position*/
+width: 85%;
+margin: 15px auto; 
+
+	/*theme*/
+	text-align: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	line-height: 0.1em;
+
+  /*other*/
+  span {border: 1px solid rgba(0, 0, 0, 0.2);
+  	border-radius: 15px;
+  	padding: 5px 15px;
+  	cursor: default;
+  	background: white;
+  }
+
+}
+
+}
+
+.form_login{
+/*form input selection*/
+ /* label color */
+ input {
+ 	caret-color:$caret-color;
+ }
+ .input-field label {
+ 	color: $label-color;
+ }
+   /* label focus color */
+   .input-field input[class="validate"]:focus + label {
+   	color: $label-focus-color;
+   }
+   /* label underline focus color */
+   .input-field input[class="validate"]:focus {
+   	border-bottom: 1px solid #000;
+   	box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[class="validate"].valid {
+   	border-bottom: 1px solid #000;
+   	box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[class="validate"].invalid {
+   	border-bottom: 1px solid #000;
+   	box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+   	color:$form-icon-focus-color ;
+   }
+
+	/*other*/
+	i{
+		color:$form-login-icon;
+	}
+
+	.loginButtonD{
+		display: flex;
+		justify-content: center;
+
+		button{
+			padding: 0px 15px;
+			border-radius: 6px;
+			background:$form-login-button;
+			margin: auto 0;
+		}
+
+	}
+
+	.signButtonD{
+		@extend .loginButtonD;
+		justify-content: space-around;
+		a{
+/*position*/
+width: 50px;
+height: 50px;
+margin: 5px;
+display: -webkit-box;
+display: -webkit-flex;
+display: -moz-box;
+display: -ms-flexbox;
+display: flex;
+justify-content: center;
+
+/*theme*/
+font-size: 25px;
+color: #fff;
+align-items: center;
+border-radius: 50%;
+transition: 0.5s all linear;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+i{ color:white;}
+}
+.form_login-google{
+	background: #ea4335;
+	&:hover{background: black;}
+}
+.form_login-github{
+	background: #233740;
+	&:hover{
+		background: black ;
+	}
+}
+}
+
+.helper-text{
+	font-size: .9rem;
+	transition:0.5s all ease-in-out;
+	&:hover{
+		color: #8B2E5F;
+	}
+}
+}
+
+.form_other-login{
+
+/*position*/
+display: flex;
+justify-content:space-evenly;
+margin-bottom: 20px;
+/*other*/
+a{
+/*position*/
+width: 50px;
+height: 50px;
+margin: 5px;
+display: -webkit-box;
+display: -webkit-flex;
+display: -moz-box;
+display: -ms-flexbox;
+display: flex;
+justify-content: center;
+
+/*theme*/
+font-size: 25px;
+color: #fff;
+align-items: center;
+border-radius: 50%;
+transition: 0.5s all linear;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+i{ color:white;}
+}
+.form_login-google{
+	background: #ea4335;
+	&:hover{background: black;}
+}
+.form_login-github{
+	background: #233740;
+	&:hover{
+		background: black ;
+	}
+}
+
+}
+
+.form_other-signin{
+	display: flex;
+	justify-content:center;
+}
+.signUsers{ 
+	display: none;
+	h1{
+		font-size:2.5em !important;
+	}
+	.input-field{
+		margin-top: 0.5em !important;
+		margin-bottom: 0.5em !important;
+	}
+	.signButtonD a{
+		width: 36px;
+		height: 36px;
+		font-size: 20px;
+	}
+
+}
+.loginUsers{
+	margin-top:20px; 
+}
+
+.active{
+	display: block;
+}
+
+/*
+*
+*
+* text.php
+*
+*/
+.textBanner{
+	position: relative;
+	top: -64px;
+	z-index: -5;
+}
+.textGrid{
+
+	width: 90vw;
+	margin: 0 auto;
+	margin-top: 5vh;
+}
+.textButtonGrid{
+	display: flex;
+	//justify-content:;
+	button,input[type="submit"]{
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		background:$secondary-color;
+	}
+}
+#git_url{
+	margin: 0;
+	cursor: pointer;
+}
+
+/*
+*
+* textBook.php
+*
+*
+*/
+.textBookBanner{
+	box-shadow: 0px 11px 5.5px rgba(0,0,0,0.24);
+	height: 300px;
+	position: relative;
+	z-index: -5;
+	top: -64px;
+	background-color: #f0db4f;
+
+	.draftBookBanner{
+		filter: drop-shadow(-2mm 2mm 1mm rgba(0,0,0,0.54));
+		position: absolute;
+		right: 0px;
+		bottom: 0;
+		width: 101.5%;
+		height: 100%;
+    /* filter: drop-shadow(0mm 1mm 1mm whitesmoke); */
+    background-image: url(../img/textBook.svg);
+    background-position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+	/*other*/
+	.textBookHeader{
+		position: absolute;
+		top: 75px;
+		width: 80vh;
+		height: 20vh;
+		left: 170px;
+		color: white;
+		font-size: 3.5em;
+		p{
+			margin: 0;
+		}
+	}
+
+
+
+}
+}
+
+
+
+.textBookUser{
+	    /* box-shadow: 6.5px 6.9px 1.9px rgb(0,0,0,0.34); */
+    /* background-color: whitesmoke; */
+    border-radius: 3px;
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    color: white;
+    font-size: 1em;
+    .row{
+    	margin-bottom: 0px !important;
+    }
+
+    .textBookHeaderName{
+    	font-weight: bold;
+    	color: white;
+    	text-transform: capitalize;
+    	margin-bottom: 0px;
+    	margin-top: 1.7em;
+    }
+    .textBookHeaderDate{
+
+    	color: grey;
+    	font-weight: 500;
+    	font-size: small;
+    	margin:0px;
+    }
+    .textBookUserImg{
+    	background-image: url(https://i.hizliresim.com/V3ybBP.jpg);
+    	background-position: top;
+    	background-repeat: no-repeat;
+    	background-size: cover;
+    	margin-top: 15px;
+    	width: 64px;
+    	height: 64px;
+    	border-radius: 50%;
+    /* border: 1.2px solid whitesmoke; */
+    box-shadow: 0px 0px 6.9px 1.7px;
+}
+
+}
+
+.textBookHeaderBannerTypeLogo{
+	position: absolute;
+	right: 6.4%;
+	top: 30%;
+	border: 61px;
+	overflow: hidden;
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+	/**
+	*
+	*sublime style code
+	*
+	**/
+
+	/*
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+*/
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	padding: 0.5em;
+	background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+	color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+	color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+	color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+	color: #a6e22e;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+	color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+	color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+	color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+	color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+	color: #75715e;
+}
+
+.containerText{
+	padding:3% 5%;
+
+}
+
+#textBookMarkdown{
+
+	position: relative;
+	max-height: 110vh;
+	height: 100vh;
+	width: 100%;
+	border: 1.5px solid darkslategrey;
+	border-radius: 10px;
+	overflow: hidden;
+
+
+}
