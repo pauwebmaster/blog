@@ -114,6 +114,17 @@ $("#close").click(function() {
 });
  $(".login-block").modal("close");
 
+
+
+$(".login-block input").each(function(){
+  $(this).val("");
+     var errMsj=  $(this).attr("data-error");
+     $(errMsj).text("");
+    });
+$(".login-block label").each(function(){
+  $(this).removeClass("active");
+});
+
 } );
 
 

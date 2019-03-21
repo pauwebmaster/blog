@@ -19,10 +19,10 @@
 			</div>
 			<div class="input-field col s5  ">
 				<i class="fab fa-github prefix"></i>
-				<input id="gitHub" type="text" name="textGit" data-error=".errgitHub" class="validate">
+				<input id="gitHub" type="url" name="textGit" data-error=".errgitHub" class="validate">
 				<label for="gitHub">Github dökümanı için linki buraya yapıştır :)</label>
 				<div class="errgitHub"></div>
-				<a id="git_url" class="helper-text right-align inline" href="#">önizlemek için tıklayın</a>
+				<a id="git_url" class="helper-text right-align inline" href="#githubContent">önizlemek için tıklayın</a>
 			</div>
 
 			
@@ -49,7 +49,7 @@
 
 
 
-
+<div id="githubContent" style="display: none;">fatihemre</div>
 
 
 <!-- modal -->
@@ -61,7 +61,23 @@
 
 <script src="js/modaal.js"></script>
 <script src="https://cdn.ckeditor.com/4.11.2/standard-all/ckeditor.js"></script>
-<script src="js/jquery-url-min.js"></script>
+
+
+<script>
+	
+	$("#gitHub").on("blur",function(){
+
+ var git_url__git=$('#gitHub').val().replace("https://github.com", "").replace(".git","");
+$("#githubContent").load( "markdown.php?textGit='https://raw.githubusercontent.com" + git_url__git  +  "/master/README.md'"  );
+	$('.inline').modaal();
+	});
+
+
+
+
+
+</script>
+
 <script>
 
 	$(document).ready(function(){
@@ -98,27 +114,7 @@
 });
 
 	
-	/*$("#gitHub").keyup(function(){
 
- var git_url__git=$('#gitHub').val().replace(".git", "");
-
-
-var git_url= "markdown.php?textGit="+'"https://raw.githubusercontent.com'+ $.url('path',git_url__git)+ '/master/README.md"';
-
-	$("#git_url").attr("href",git_url);
- 
-	$('.inline').modaal({
-		type: 'ajax'
-
-		confirm_callback: function () {
-        uyarı ('bu işlemi onayladınız');
-	}
-	});
-
-
-
-	});
-*/
 
 
 
