@@ -415,14 +415,119 @@ $('.loginUsers input').keypress(function(e) {
 });
 
 
-/*
+/**
 *
-*
-* textbook ajax.php
-*
+*       PROFİL SAYFASI
 *
 **/
 
+
+
+ $(".profilSettingForm").validate({
+  rules: {
+    name: {
+      required: true,
+      minlength: 2
+    },
+    last_name: {
+      required: true,
+      minlength:2
+    },
+    date: {
+      required: true
+    },
+    telefon: {
+      required: true,
+      phoneUS:true
+    },
+    
+    passwordOld:{
+      minlength:5
+    },
+    passwordNew:{
+      minlength:5,
+      
+    },
+    passwordNew2:{
+      minlength:5,
+      equalTo:"#passwordNew"
+    }
+    ,
+    gender:{
+      required:true
+    },
+    userBio:{
+      minlength:50
+    }
+
+  },
+              //For custom messages
+              messages: {
+               name: {
+                required: "Doldurulması zorunlu alan.",
+                minlength: "En az 2 karakter giriniz."
+              },
+              last_name: {
+               required: "Doldurulması zorunlu alan.",
+               minlength: "En az 2 karakter giriniz."
+             },
+             date: {
+               required: "Doldurulması zorunlu alan."
+             },
+             telefon: {
+               required: "Doldurulması zorunlu alan.",
+               phoneUS:"Geçerli telefon numarası giriniz."
+
+             },
+             passwordOld:{
+              minlength:"En az 5 karakter giriniz."
+            },
+            passwordNew:{
+              minlength:"En az 5 karakter giriniz.",
+            }, 
+            passwordNew2:{
+              minlength:"En az 5 karakter giriniz.",
+              equalTo:"Lütfen şifreyi doğru giriniz."
+            },
+            gender:{
+             required: "Doldurulması zorunlu alan."
+           },
+           userBio:{
+            minlength:"En az 50 karakter giriniz."
+          }
+        },
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          var placement = $(element).data('error');
+
+          $(placement).addClass("errForm");
+          if ( element.is(":radio") )
+          {
+            //$(".profilPageGender").addClass("errForm");
+            $(".profilPageGender").append(error);
+          }
+
+        else if (placement) {
+            $(placement).append(error);
+          } else {
+            error.insertAfter(element);
+          }
+        },
+        submitHandler: function(){ 
+          myAjax(
+            "post",
+            "profilEdit.php",
+            $(".profilSettingForm").serialize(),
+            function(){
+              M.toast({html: 'Profiliniz Güncellenmiştir', classes: 'rounded  green darken-2 ',displayLength:5000,activationPercent:0.8});
+              $("#loading").hide("fade","slow");
+            },
+            function(){
+              $("#loading").show("fade","fast");
+            });
+        }
+
+      });
 
 
 
