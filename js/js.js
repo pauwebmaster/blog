@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
 
+
+
 /*
 *
 * GRADİENT SİDENAV
@@ -387,16 +389,15 @@ for ( instance in CKEDITOR.instances )
          {
            CKEDITOR.instances[instance].updateElement();
 
-                myAjax(
-                  "post",
-                  "textSend.php",
-                  $("#textForm").serialize(),
-                  function(){
-                 alert("başarılı");
-                  },
-                  function(){
-                    //empty
-                  });
+               $.ajax({
+          type:'POST',            // - POST veya GET
+          data:$("#textForm").serialize()+"&tag="+JSON.stringify(M.Chips.getInstance($('.chips')).chipsData),              // - Yukarıda data değişkenini tanımladık.
+          dataType:'json',          // - JSON Formatında Gönderilmesini Sağladık.
+          url:'textSend.php',          // - Data Bilgisinin Gönderileceği Dosya Adresi.
+          success:function(){      // - Success, complete ve error Fonksiyonları vardır.
+            alert("başarılı"); // - Gelen Verimizi Sonuc Divinin İçerisine Yazdırdık.
+          }
+        });
               }
 }
 

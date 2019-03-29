@@ -19,6 +19,20 @@ $content=$_POST["textcontent"];
 $user=$_SESSION['user'];
 //echo "<br>".$header.$github."CONTENT:".$content."-".$user;
 
+$etiket=json_decode($_POST["tag"],TRUE);  
+
+
+
+/*
+*
+* tag etiketi dizi şeklinde alınıyor bunu tag database gönderilecek;
+*
+*/
+
+
+
+
+
 if (isset($_POST["submit"])) {
 	# code...
 $ekle = $bag->ekle("text", "header,git,content,username",array("$header","$yeni_url","$content","$user"));

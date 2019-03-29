@@ -1,5 +1,8 @@
 @import "_materialize.scss";
 @import "_profilPage.scss";
+@import "_indexCard.scss";
+@import "_kartlarim.scss";
+@import "_sifreYenileme.scss";
 
 /*
 *
@@ -127,14 +130,14 @@ nav{
 
 	/*other*/
 	.collection-item{
-			margin: 10px  0;
-			border-radius: 35px;
+		margin: 10px  0;
+		border-radius: 35px;
 
-			i{
-				font-size: 1.5em;
-				margin-right: 8px;
-			}
+		i{
+			font-size: 1.5em;
+			margin-right: 8px;
 		}
+	}
 	
 	.sidenavUsersInfo{
 		width: 100%;
@@ -170,39 +173,39 @@ nav{
 		display: flex;
 		justify-content:center;
 		color: white;
-		    font-size: 1em;
+		font-size: 1em;
 
-	.sidenav_writers{	
-		background: #3E271F !important;
-    border-radius: 35px;
-    box-shadow: 0px 0px 10px 2px grey, 0px 0px 6px 0px whitesmoke;}
-	}
+		.sidenav_writers{	
+			background: #3E271F !important;
+			border-radius: 35px;
+			box-shadow: 0px 0px 10px 2px grey, 0px 0px 6px 0px whitesmoke;}
+		}
 
-	.indexSideNavCategories
-	{
-		background:none !important;
-		display: flex;
-		justify-content: start;
-		align-items: end;
-		flex-direction: column;
-		
-h5{    color: white;
-    font-family: cursive;
-    font-size: 1.44rem;
-}
-		
-		
+		.indexSideNavCategories
+		{
+			background:none !important;
+			display: flex;
+			justify-content: start;
+			align-items: end;
+			flex-direction: column;
+
+			h5{    color: white;
+				font-family: cursive;
+				font-size: 1.44rem;
+			}
 
 
-	}
 
-	.sideNavFooter
-	{
-		position: absolute;
-		width: 100%;
-		bottom: 35px;
-		height: auto;
-		margin: 0 auto;
+
+		}
+
+		.sideNavFooter
+		{
+			position: absolute;
+			width: 100%;
+			bottom: 35px;
+			height: auto;
+			margin: 0 auto;
 	//color: #fff;
 	ul{
 		display: flex;
@@ -423,7 +426,7 @@ background-color: white;
 	/*positon*/
 	width: 35px;
 	height: 35px;
-	top: 10px;
+	top: 16px;
 	right: 10px;
 	position: absolute;
 	/*theme*/
@@ -458,6 +461,13 @@ background-color: white;
 	transform: translateY(0%);
 }
 
+.recaptcha{
+	background: red;
+	width: 310px;
+	height: 74px;
+	margin: 0 auto;
+}
+
 .login-block{
 
 /*position*/
@@ -484,12 +494,18 @@ display: none;
     display: none;
 }
 h1{
+	//border: 1px solid;
 	margin: 0 auto;
-	color: $login-color;
+	color: #436d73;
 	font-family: 'Poppins', sans-serif;
-	font-size: 39px;
+	font-size: 30px;
 	line-height: 1.2;
 	text-align: center;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	z-index: -100;
 }
 .form-brackets {    
 /*position*/
@@ -673,7 +689,7 @@ i{ color:white;}
 .signUsers{ 
 	display: none;
 	h1{
-		font-size:2.5em !important;
+		font-size:2em;
 	}
 	.input-field{
 		margin-top: 0.5em !important;

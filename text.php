@@ -25,7 +25,9 @@
 				<a id="git_url" class="helper-text right-align inline" href="#githubContent">önizlemek için tıklayın</a>
 			</div>
 
-			
+			<div class="input-field col s10  ">
+ <div class="chips chips-autocomplete">   <input name="tag" class="custom-class">   </div>
+			</div>
 			<div class="col s2 textButtonGrid">
 				
 				<button class="waves-effect waves-light btn-large" name="submit" type="submit">gönder</button>
@@ -58,7 +60,6 @@
 
 
 
-
 <script src="js/modaal.js"></script>
 <script src="https://cdn.ckeditor.com/4.11.2/standard-all/ckeditor.js"></script>
 
@@ -67,9 +68,9 @@
 	
 	$("#gitHub").on("blur",function(){
 
- var git_url__git=$('#gitHub').val().replace("https://github.com", "").replace(".git","");
-$("#githubContent").load( "markdown.php?textGit='https://raw.githubusercontent.com" + git_url__git  +  "/master/README.md'"  );
-	$('.inline').modaal();
+		var git_url__git=$('#gitHub').val().replace("https://github.com", "").replace(".git","");
+		$("#githubContent").load( "markdown.php?textGit='https://raw.githubusercontent.com" + git_url__git  +  "/master/README.md'"  );
+		$('.inline').modaal();
 	});
 
 
@@ -83,16 +84,16 @@ $("#githubContent").load( "markdown.php?textGit='https://raw.githubusercontent.c
 	$(document).ready(function(){
 		$('select').formSelect();
 		$('select').show();
-	
 
 
-	CKEDITOR.replace('editor1',{
 
-		extraPlugins: 'codesnippet , autogrow',
-		codeSnippet_theme :'monokai_sublime',
-		uiColor:"whitesmoke",
-		autoGrow_minHeight :250,
-		autoGrow_maxHeight: 550,
+		CKEDITOR.replace('editor1',{
+
+			extraPlugins: 'codesnippet , autogrow',
+			codeSnippet_theme :'monokai_sublime',
+			uiColor:"whitesmoke",
+			autoGrow_minHeight :250,
+			autoGrow_maxHeight: 550,
 			//toolbar : 'Basic'
 			toolbarGroups : [
 
@@ -111,7 +112,7 @@ $("#githubContent").load( "markdown.php?textGit='https://raw.githubusercontent.c
 
 		});
 
-});
+	});
 
 	
 
@@ -122,6 +123,33 @@ $("#githubContent").load( "markdown.php?textGit='https://raw.githubusercontent.c
 </script>
 
 
+<script>
+
+	$(document).ready(function(){
+	$('.chips-autocomplete').chips({
+
+		placeholder:"Etiket belirleyin.",
+		limit:5,
+		secondaryPlaceholder: '+Tag',
+    autocompleteOptions: {
+      data: {
+        'Apple': null,
+        'Microsoft': null,
+        'Google': null
+      },
+      limit: Infinity,
+      minLength: 1
+    }
+  });
+
+
+ var denemeTag= JSON.stringify(M.Chips.getInstance($('.chips')).chipsData);
+
+});
+
+
+
+</script>
 
 
 <?php 

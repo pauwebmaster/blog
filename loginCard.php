@@ -28,9 +28,12 @@
 					<label for="icon-password">Parola</label>
 					<div class="errLognPassword"></div>
 
-					<a class="helper-text right-align" href=""> Parolanızı mı unuttunuz?</a>
+					<a class="helper-text right-align inline forget" href="#forget"> Parolanızı mı unuttunuz?</a>
 				</div>
+<div class="input-field col s12">
+<div class="recaptcha"></div></div>
 				<div class="input-field col s12 loginButtonD">  
+
 					<button id="loginButton" class="btn waves-effect waves-light" type="submit">Giriş</button>
 				</div>
 
@@ -92,6 +95,9 @@
 					<label for="siginPhone">Telefon No</label>
 						<div class="errPhone"></div>
 				</div>
+<div class="input-field col s12">
+<div class="recaptcha"></div></div>
+
 				<div class="input-field col s12 signButtonD">
 <!-- 					<a class="form_login-google" href=""><i class="fab fa-google"></i></a>
  -->					<button class="btn waves-effect waves-light " type="submit" name="loginButton">Kayıt Ol</button>
@@ -108,3 +114,38 @@
 	</div>
 
 </div>
+
+
+
+
+
+<div id="forget" style="display:none;">
+   <form action="">
+   	<div class="input-field inline col s12">
+					<i class="material-icons prefix">account_circle</i>
+					<input id="signUserName" type="text" class="validate" data-error=".errUsername"  name="username" >
+					<label for="signUserName">Kullanıcı Adı</label>
+					<div class="errUsername"></div>
+				</div>
+				<input type="submit" class="submit">
+
+   </form>
+</div>
+
+
+
+<script>
+	$(document).ready(function() {
+
+
+$('.forget').modaal();
+
+
+
+
+	});
+
+
+
+
+</script>
