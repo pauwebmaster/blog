@@ -21,14 +21,40 @@
 				<i class="fab fa-github prefix"></i>
 				<input id="gitHub" type="url" name="textGit" data-error=".errgitHub" class="validate">
 				<label for="gitHub">Github dökümanı için linki buraya yapıştır :)</label>
-				<div class="errgitHub"></div>
 				<a id="git_url" class="helper-text right-align inline" href="#githubContent">önizlemek için tıklayın</a>
+				<div class="errgitHub errForm"></div>
 			</div>
 
 			<div class="input-field col s10  ">
- <div class="chips chips-autocomplete">   <input name="tag" class="custom-class">   </div>
+ <div class="chips chips-autocomplete">   <input name="tag" data-error=".errTag" class="custom-class">   </div>
+ <div class="errTag"></div>
 			</div>
-			<div class="col s2 textButtonGrid">
+<div class="input-field col s10">
+	<div class="row">
+		<div class="col  s4">
+	<label>
+        <input name="kategori" type="radio" value="PHP"  />
+        <span>PHP</span>
+      </label>
+</div>
+
+<div class="col s4">
+	<label>
+        <input name="kategori" type="radio" value="JAVASCRİPT"  />
+        <span>JAVASCRİPT</span>
+      </label>
+</div>
+<div class="col s4">
+	<label>
+        <input name="kategori" type="radio" value="CSS"  />
+        <span>CSS</span>
+      </label>
+</div>
+</div>
+	<div class="kategoriText errForm"></div>		
+
+</div>
+<div class="col s2 textButtonGrid">
 				
 				<button class="waves-effect waves-light btn-large" name="submit" type="submit">gönder</button>
 				

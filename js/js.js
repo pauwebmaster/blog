@@ -118,12 +118,12 @@ $("#close").click(function() {
 
 
 
-$(".login-block input").each(function(){
+ $(".login-block input").each(function(){
   $(this).val("");
-     var errMsj=  $(this).attr("data-error");
-     $(errMsj).text("");
-    });
-$(".login-block label").each(function(){
+  var errMsj=  $(this).attr("data-error");
+  $(errMsj).text("");
+});
+ $(".login-block label").each(function(){
   $(this).removeClass("active");
 });
 
@@ -199,7 +199,7 @@ click(function(){
           },
           phone:{
             required: true,
-      phoneUS: true
+            phoneUS: true
           }
 
         },
@@ -225,9 +225,9 @@ click(function(){
                   equalTo:"Lütfen şifreyi doğru giriniz."
                 },
                 phone:{
-            required: "Lütfen bu alanı doldurun",
-      phoneUS: "Geçerli bir telefon numarası giriniz."
-          }
+                  required: "Lütfen bu alanı doldurun",
+                  phoneUS: "Geçerli bir telefon numarası giriniz."
+                }
               },
               errorElement : 'div',
               errorPlacement: function(error, element) {
@@ -346,50 +346,76 @@ $("#loginform").validate({
 *
 */
 $("#textForm").validate({
-    rules:{
-      textHeader:{
-        required:true,
-        minlength:5
-
-      },
-      textGit:{
-        url:true
-
-      },
-      textContent:{
-        minlength:160
-      }
+  rules:{
+    textHeader:{
+      required:true,
+      minlength:5
 
     },
-    messages:{
-      textHeader:{
-        required:"Lütfen başlık giriniz.",
-        minlength:"En az 5 karakter giriniz."
-      },
-      textGit:{
-        url:"gitHub adresi giriniz."
-      },
-      textContent:{
-        minlength:"En az 160 karakter girmelisiniz."
-      }
+    textGit:{
+      url:true
+
 
     },
-    errorElement : 'div',
-              errorPlacement: function(error, element) {
-                var placement = $(element).data('error');
-                $(placement).addClass("errForm");
-                if (placement) {
-                  $(placement).append(error);
-                } else {
-                  error.insertAfter(element);
-                }
-              },
-              submitHandler: function(){ 
-for ( instance in CKEDITOR.instances )
-         {
-           CKEDITOR.instances[instance].updateElement();
+    textContent:{
+      minlength:160
+    },
+    kategori:{
+      required:true
+    }
+    ,
+    tag:{
+      required:true
+    }
 
-               $.ajax({
+  },
+  messages:{
+    textHeader:{
+      required:"Lütfen başlık giriniz.",
+      minlength:"En az 5 karakter giriniz."
+    },
+    textGit:{
+      url:"gitHub adresi giriniz."
+    },
+    textContent:{
+      minlength:"En az 160 karakter girmelisiniz."
+    },
+    kategori:
+    {
+      required:"Lütfen kategori belirleyiniz.",
+
+    },
+    tag:{
+            required:"En az bir etiket giriniz",
+
+    }
+
+  },
+  errorElement : 'div',
+  errorPlacement: function(error, element) {
+          var placement = $(element).data('error');
+
+          $(placement).addClass("errForm");
+          if ( element.is(":radio") )
+          {
+            //$(".profilPageGender").addClass("errForm");
+            $(".kategoriText").append(error);
+          }
+          
+        
+
+          else if (placement) {
+            $(placement).append(error);
+          } else {
+            error.insertAfter(element);
+          }
+        },
+  submitHandler: function(){ 
+    for ( instance in CKEDITOR.instances )
+    {
+     CKEDITOR.instances[instance].updateElement();
+
+     $.ajax({
           type:'POST',            // - POST veya GET
           data:$("#textForm").serialize()+"&tag="+JSON.stringify(M.Chips.getInstance($('.chips')).chipsData),              // - Yukarıda data değişkenini tanımladık.
           dataType:'json',          // - JSON Formatında Gönderilmesini Sağladık.
@@ -398,10 +424,10 @@ for ( instance in CKEDITOR.instances )
             alert("başarılı"); // - Gelen Verimizi Sonuc Divinin İçerisine Yazdırdık.
           }
         });
-              }
-}
+   }
+ }
 
-  });
+});
 
 
 
@@ -424,7 +450,7 @@ $('.loginUsers input').keypress(function(e) {
 
 
 
- $(".profilSettingForm").validate({
+$(".profilSettingForm").validate({
   rules: {
     name: {
       required: true,
@@ -508,7 +534,7 @@ $('.loginUsers input').keypress(function(e) {
             $(".profilPageGender").append(error);
           }
 
-        else if (placement) {
+          else if (placement) {
             $(placement).append(error);
           } else {
             error.insertAfter(element);

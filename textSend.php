@@ -19,8 +19,8 @@ $content=$_POST["textcontent"];
 $user=$_SESSION['user'];
 //echo "<br>".$header.$github."CONTENT:".$content."-".$user;
 
-$etiket=json_decode($_POST["tag"],TRUE);  
-
+$tag=json_decode($_POST["tag"],TRUE);  
+$etiket = $_POST["kategori"];
 
 
 /*
