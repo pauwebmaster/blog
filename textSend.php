@@ -1,4 +1,6 @@
 <?php 
+
+/*deneme yapılıyor*/
 include 'baglan.php';
 session_start();
 
