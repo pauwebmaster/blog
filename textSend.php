@@ -5,10 +5,17 @@ session_start();
 $header=$_POST["textHeader"];
 $github=$_POST['textGit'];
 
+
+if (!empty($_POST['textGit'])) {
 $sonuc = parse_url($github);
 $ek_url = substr($sonuc['path'],0,-4);
-
 $yeni_url = 'https://raw.githubusercontent.com'.$ek_url.'/master/README.md';
+}
+else
+{
+	
+	$yeni_url="";
+}
 
 //https://github.com/fatihemree/codesAjax.git
 //https://raw.githubusercontent.com/defunkt/jquery-pjax/master/README.md
@@ -16,18 +23,27 @@ $yeni_url = 'https://raw.githubusercontent.com'.$ek_url.'/master/README.md';
 //print_r($header);
 
 $content=$_POST["textcontent"];
-$user=$_SESSION['user'];
+//$user=$_SESSION['user'];
+$user=1;
 //echo "<br>".$header.$github."CONTENT:".$content."-".$user;
 
-$tag=json_decode($_POST["tag"],TRUE);  
-$etiket = $_POST["kategori"];
+$tag=json_decode($_POST["tag"],FALSE);  
+
+$kategori = $_POST["kategori"];
 
 
-/*
-*
-* tag etiketi dizi şeklinde alınıyor bunu tag database gönderilecek;
-*
-*/
+foreach ($tag as $key =>$value) {
+	
+	foreach ($value as $key2 => $etiket) {
+		
+	$etiketDizisi[$key]=$etiket;
+	
+	
+	}
+	
+}
+
+$tagSerialize=  implode(",",$etiketDizisi);
 
 
 
@@ -35,7 +51,8 @@ $etiket = $_POST["kategori"];
 
 if (isset($_POST["submit"])) {
 	# code...
-$ekle = $bag->ekle("text", "header,git,content,username",array("$header","$yeni_url","$content","$user"));
+$ekle = $bag->ekle("texts","baslik,git_link,icerik,yazar_id,kategori,etiket",array("$header","$yeni_url","$content","$user","$kategori","$tagSerialize"));
+
 }
 
 

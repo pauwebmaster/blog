@@ -365,7 +365,7 @@ $("#textForm").validate({
     }
     ,
     tag:{
-      required:true
+      //required:true
     }
 
   },
@@ -386,7 +386,7 @@ $("#textForm").validate({
 
     },
     tag:{
-            required:"En az bir etiket giriniz",
+          //  required:"En az bir etiket giriniz",
 
     }
 
