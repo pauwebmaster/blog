@@ -6592,6 +6592,9 @@ body {
   height: 74px;
   margin: 0 auto; }
 
+#forget {
+  background-color: white; }
+
 .login-block {
   /*position*/
   width: 30vw;
