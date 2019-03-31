@@ -6593,7 +6593,16 @@ body {
   margin: 0 auto; }
 
 #forget {
+  display: flex;
+  padding: 10px;
+  border-radius: 20px;
   background-color: white; }
+#forget button {
+  background: #4caf50;
+  margin: 0 auto; }
+
+.forgetButtonGrid {
+  display: flex; }
 
 .login-block {
   /*position*/

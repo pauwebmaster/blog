@@ -145,14 +145,14 @@ async defer>
 
 
 <div id="forget" class="row" style="display:none; ">
-	<form action="">
+	<form action="" id="forgetForm">
 		<div class="input-field inline col s12">
-			<i class="material-icons prefix">account_circle</i>
-			<input id="signUserName2" type="text" class="validate" data-error=".errUsername2"  name="username2" >
-			<label for="signUserName2">Kullanıcı Adı</label>
-			<div class="errUsername"></div>
+			<i class="material-icons prefix">email</i>
+			<input id="forgetEmail" type="text" class="validate" data-error=".errForgetEmail"  name="f_email" >
+			<label for="forgetEmail">email adresinizi giriniz</label>
+			<div class="errForgetEmail"></div>
 		</div>
-		<div class="input-field col s12">
+		<div class="input-field col s12  forgetButtonGrid">
 
 	<button class="btn waves-effect waves-light " type="submit" name="loginButton">gönder</button>
 	</div>

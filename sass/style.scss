@@ -471,8 +471,18 @@ background-color: white;
 #forget{
 
 	//position: absolute;
-	
+	display: flex;
+	padding: 10px;
+	border-radius: 20px;
 	background-color: white;
+	button{
+		background: #4caf50;
+		margin:0 auto;
+	}
+}
+.forgetButtonGrid{
+	display: flex;
+
 }
 
 .login-block{
