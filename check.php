@@ -9,7 +9,7 @@ $email = isset($_GET["email"]) ? $_GET["email"] : NULL;
 
 
 if(isset($email)){
-$emails = $bag->cek("OBJ_ALL","info_users","*","WHERE email=?", array($email));
+$emails = $bag->cek("OBJ_ALL","n_users","*","WHERE email=?", array($email));
 if($emails)
 	echo json_encode(false);
 else
@@ -18,7 +18,7 @@ else
 }
 else{
 
-$user = $bag->cek("OBJ_ALL","info_users","*","WHERE name=?", array($username));
+$user = $bag->cek("OBJ_ALL","n_users","*","WHERE name=?", array($username));
 if($user)
 	echo json_encode(false);
 else

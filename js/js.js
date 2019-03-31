@@ -239,11 +239,11 @@ click(function(){
                   error.insertAfter(element);
                 }
               },
-              submitHandler: function(){ 
+              submitHandler: function(){              
                 myAjax(
                   "post",
                   "users.php",
-                  $(".kayit").serialize(),
+                  $(".kayit").serialize()+"&captchai="+grecaptcha.getResponse(1),
                   function(){
                     M.toast({html: 'Giriş için  e-mail onay mesaji gönderdik', classes: 'rounded  green darken-2 ',displayLength:5000,activationPercent:0.8});
                     $("#loading").hide("fade","slow");
@@ -301,9 +301,9 @@ $("#loginform").validate({
 
   submitHandler: function(){ 
     myAjax(
-      "get",
+      "post",
       "userID.php",
-      $("#loginform").serialize(),
+      $("#loginform").serialize()+"&captcha="+grecaptcha.getResponse(0),
       function(data){
 
         if (data===false) {

@@ -1,5 +1,30 @@
 <!--index login -->
 
+		<!--reCAPTCHA -->
+		<script> var onloadCallback = function(){
+
+					grecaptcha.render('scrt',{
+
+						'sitekey' : '6Ld4DpsUAAAAAIrgbcu_49Gd-m1uUBV5Yg-z-_9q'
+
+					});
+
+					grecaptcha.render('scrtt',{
+
+						'sitekey' : '6Ld4DpsUAAAAAIrgbcu_49Gd-m1uUBV5Yg-z-_9q'
+
+					});
+
+					}
+		</script>
+
+
+		<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=tr"
+		        async defer>
+		    </script>
+
+		<!--reCAPTCHA -->
+
 
 <div id="modal1" class="login-block">
 
@@ -31,7 +56,7 @@
 					<a class="helper-text right-align inline forget" href="#forget"> Parolanızı mı unuttunuz?</a>
 				</div>
 <div class="input-field col s12">
-<div class="recaptcha"></div></div>
+<div id="scrt" ></div></div>
 				<div class="input-field col s12 loginButtonD">  
 
 					<button id="loginButton" class="btn waves-effect waves-light" type="submit">Giriş</button>
@@ -96,7 +121,7 @@
 						<div class="errPhone"></div>
 				</div>
 <div class="input-field col s12">
-<div class="recaptcha"></div></div>
+<div id="scrtt"></div></div>
 
 				<div class="input-field col s12 signButtonD">
 <!-- 					<a class="form_login-google" href=""><i class="fab fa-google"></i></a>
@@ -123,8 +148,8 @@
    <form action="">
    	<div class="input-field inline col s12">
 					<i class="material-icons prefix">account_circle</i>
-					<input id="signUserName" type="text" class="validate" data-error=".errUsername"  name="username" >
-					<label for="signUserName">Kullanıcı Adı</label>
+					<input id="signUserName2" type="text" class="validate" data-error=".errUsername2"  name="username2" >
+					<label for="signUserName2">Kullanıcı Adı</label>
 					<div class="errUsername"></div>
 				</div>
 				<input type="submit" class="submit">
