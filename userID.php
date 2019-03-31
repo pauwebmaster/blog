@@ -12,15 +12,18 @@ if (isset($userID) && isset($passwordID) && !empty($scrt)) {
 
 
 
-$sonuc = $bag->cek("OBJ", "n_users", "username,pass,onay", "WHERE username=? AND pass=?", array($userID,$passwordID));
-$user = isset($sonuc->username)? $sonuc->username : NULL;
-$password =isset($sonuc->pass)? $sonuc->pass : NULL;
-$verif =isset($sonuc->onay)? $sonuc->onay : NULL;
+$sonuc = $bag->cek("", "n_users", "id,username,pass,onay", "WHERE username=? AND pass=?", array($userID,$passwordID));
+$rs = $sonuc->fetch(PDO::FETCH_OBJ);
+$id = isset($rs->id)? $rs->id : NULL;
+$user = isset($rs->username)? $rs->username : NULL;
+$password =isset($rs->pass)? $rs->pass : NULL;
+$verif =isset($rs->onay)? $rs->onay : NULL;
+
 
 
 if ($user && $password && $verif == 1 && recapt_curl($scrt)===true ) {
 
-$_SESSION['user']=$userID;
+$_SESSION['user']=$id;
 
 header('Location:index.php');
 }
@@ -56,7 +59,7 @@ header('Content-type: application/json');
 	     			 }
 
 	     			 else{
-
+	     			 		
 	     			 	//echo "İşlemlerinize devam edebilirsiniz." . '<br>'. $output;
 	     			 	return true;
 	     			 }
