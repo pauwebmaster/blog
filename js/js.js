@@ -556,7 +556,57 @@ $(".profilSettingForm").validate({
 
       });
 
+/*
+*
+*  forget.modal
+*
+*/
 
+$("#forgetForm").validate({
+  rules:{
+   f_email:{
+    required:true,
+    email:true
+   }
+
+  },
+  messages:{
+   f_email:{
+required:"Doldurulması zorunlu alan.",
+email:"Dogru email hesabı giriniz."
+
+   }
+
+  },
+  errorElement : 'div',
+  errorPlacement: function(error, element) {
+          var placement = $(element).data('error');
+
+          $(placement).addClass("errForm");
+        
+           if (placement) {
+            $(placement).append(error);
+          } else {
+            error.insertAfter(element);
+          }
+        },
+submitHandler: function(){              
+                myAjax(
+                  "post",
+                  "forget.php",
+                  $("#forgetForm").serialize(),
+                  function(){
+                    M.toast({html: 'Mail adresinizi kontrol ediniz.', classes: 'rounded  green darken-2 ',displayLength:5000,activationPercent:0.8});
+                    $(".loading-Bar").hide("fade","slow");
+                  },
+                  function(){
+                    $(".loading-Bar").show("fade","fast");
+                  });
+              }
+
+            
+
+});
 
 /*
 *

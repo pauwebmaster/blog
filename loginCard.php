@@ -145,6 +145,9 @@ async defer>
 
 
 <div id="forget" class="row" style="display:none; ">
+	<div class="progress  loading-Bar">
+		<div class="indeterminate"></div>
+	</div>
 	<form action="" id="forgetForm">
 		<div class="input-field inline col s12">
 			<i class="material-icons prefix">email</i>

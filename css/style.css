@@ -6604,6 +6604,12 @@ body {
 .forgetButtonGrid {
   display: flex; }
 
+.loading-Bar {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: none; }
+
 .login-block {
   /*position*/
   width: 30vw;
