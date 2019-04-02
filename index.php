@@ -115,13 +115,15 @@ var granimInstance = new Granim({
 </script>
 <script src="js/fitty.min.js"></script>
   <script>
+$(document).ready(function(){  
+
      fitty('.description-text-grid h1', {
       minSize: 20,
       maxSize: 30,
       observeMutations: false,
     }); 
 
-
+});
   </script>
 <!--index login -->
 <?php 
