@@ -6067,6 +6067,20 @@ input[type=range]::-ms-thumb {
 .profilButton button {
   background-color: #663399d9; }
 
+#avatarim {
+  width: 60%;
+  display: flex;
+  overflow-x: hidden;
+  border-radius: 10px; }
+#avatarim .avatarGrid {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+#avatarim .avatarGrid img {
+  height: 90%;
+  filter: drop-shadow(0px 0px 6px grey); }
+
 /*PEN STYLES*/
 /* * {
   box-sizing: border-box;
@@ -6887,7 +6901,6 @@ body {
   font-size: small;
   margin: 0px; }
 .textBookUser .textBookUserImg {
-  background-image: url(https://i.hizliresim.com/V3ybBP.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -6899,6 +6912,7 @@ body {
   box-shadow: 0px 0px 6.9px 1.7px; }
 
 .textBookHeaderBannerTypeLogo {
+  background-color: white;
   position: absolute;
   right: 6.4%;
   top: 30%;
@@ -6908,6 +6922,18 @@ body {
   width: 100px;
   border-radius: 20px; }
 .textBookHeaderBannerTypeLogo img {
+  width: 100%;
+  height: 100%; }
+
+.textBookHeaderGithubLogo {
+  position: absolute;
+  right: 6.4%;
+  bottom: 15px;
+  border: 61px;
+  overflow: hidden;
+  height: 50px;
+  width: 50px; }
+.textBookHeaderGithubLogo img {
   width: 100%;
   height: 100%; }
 

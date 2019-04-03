@@ -1,21 +1,25 @@
 <!--index login -->
 
 <!--reCAPTCHA -->
-<script> var onloadCallback = function(){
+<script> 
+	var scrt;
+	var onloadCallback = 
 
-	grecaptcha.render('scrt',{
+	function(){
 
-		'sitekey' : '6Ld4DpsUAAAAAIrgbcu_49Gd-m1uUBV5Yg-z-_9q'
+		scrt = grecaptcha.render('scrt',{
 
-	});
+			'sitekey' : '6Ld4DpsUAAAAAIrgbcu_49Gd-m1uUBV5Yg-z-_9q'
 
-	grecaptcha.render('scrtt',{
+		});
 
-		'sitekey' : '6Ld4DpsUAAAAAIrgbcu_49Gd-m1uUBV5Yg-z-_9q'
+		grecaptcha.render('scrtt',{
 
-	});
+			'sitekey' : '6Ld4DpsUAAAAAIrgbcu_49Gd-m1uUBV5Yg-z-_9q'
 
-}
+		});
+
+	}
 </script>
 
 
@@ -157,9 +161,9 @@ async defer>
 		</div>
 		<div class="input-field col s12  forgetButtonGrid">
 
-	<button class="btn waves-effect waves-light " type="submit" name="loginButton">gönder</button>
-	</div>
-</form>
+			<button class="btn waves-effect waves-light " type="submit" name="loginButton">gönder</button>
+		</div>
+	</form>
 </div>
 
 

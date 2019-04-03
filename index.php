@@ -1,5 +1,16 @@
 <?php 
 include 'header.php';
+include 'baglan.php';
+$text_id=51;
+ $indexKart = $bag->cek("OBJ_ALL", "texts", "*", "ORDER BY id ASC", array());
+
+
+$userInfo = $bag->cek("OBJ", "n_users", "username,picture,name,surname", "WHERE id=?", array($indexKart->yazar_id));
+
+if(!empty($userInfo->name))
+$userName= $userInfo->name." ".$userInfo->surname;
+else
+$userName=$userInfo->username;
 ?>
 <!--sidebar-->
 
@@ -17,7 +28,7 @@ include 'header.php';
 		<!--card-->
 
 
-		<?php for ($i=0; $i <3 ; $i++) { ?>
+		<?php  foreach($indexKart as $kart)  { ?>
 			<div class="col s12  mainCard">
 
 				<div class="blog-card alt z-depth-4">
@@ -38,15 +49,15 @@ include 'header.php';
 </div>
 <div class="description">
 	<div class="description-text-grid">
-		<h1>javascirpt  nedir nerelerde fatih erme</h1>
+		<h1><?php echo $kart->baslik; ?></h1>
 		<h2 style="display: none;">Java is not the s</h2></div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+		<p><?php echo substr($kart->icerik, 0,100 )."...";; ?></p>
 		<p class="read-more">
 			<a href="#">Read More</a>
 		</p>
 		<div class="chip chidPositon">
-			<img src="img/profil.png" alt="Contact Person">
-			scarlett johansson
+			<img src=<?php echo "'".$userInfo->image."'"; ?> alt="Contact Person">
+			<?php echo $userName; ?>
 		</div>
 	</div>
 </div>

@@ -307,6 +307,7 @@ $("#loginform").validate({
       function(data){
 
         if (data===false) {
+          javascript:grecaptcha.reset(scrt);
                     //errmessages
                     var placement  =[ $("#loginUsername").data('error'),$("#icon-password").data('error')];
                     
@@ -544,7 +545,7 @@ $(".profilSettingForm").validate({
           myAjax(
             "post",
             "profilEdit.php",
-            $(".profilSettingForm").serialize(),
+            $(".profilSettingForm").serialize()+"&resimlink='"+$(".profilGridImg img").attr("src")+"'",
             function(){
               M.toast({html: 'Profiliniz Güncellenmiştir', classes: 'rounded  green darken-2 ',displayLength:5000,activationPercent:0.8});
               $("#loading").hide("fade","slow");
