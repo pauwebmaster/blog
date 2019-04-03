@@ -1,5 +1,18 @@
 <?php 
 include 'header.php';
+include 'baglan.php';
+$text_id=51;
+$indexKart = $bag->cek("ASSOC", "texts", "*", "ORDER BY id ASC", array());
+
+$userInfo = $bag->cek("ASSOC", "n_users", "username,picture,name,surname", "WHERE id=?", array($indexKart['yazar_id']));
+
+	
+if($userInfo['name'] != NULL && $userInfo['name'] != NULL)
+$userName= $userInfo['name']." ".$userInfo['surname'];
+else
+$userName=$userInfo['username'];
+
+//echo count($indexKart['picture']);
 ?>
 <!--sidebar-->
 
@@ -17,7 +30,8 @@ include 'header.php';
 		<!--card-->
 
 
-		<?php for ($i=0; $i <3 ; $i++) { ?>
+		<?php  for ($i=0; $i < count($indexKart) ; $i++) 
+			  { ?>
 			<div class="col s12  mainCard">
 
 				<div class="blog-card alt z-depth-4">
@@ -38,15 +52,15 @@ include 'header.php';
 </div>
 <div class="description">
 	<div class="description-text-grid">
-		<h1>javascirpt  nedir nerelerde fatih erme</h1>
+		<h1><?php echo $indexKart['baslik'] ; ?></h1>
 		<h2 style="display: none;">Java is not the s</h2></div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+		<p><?php echo substr($indexKart['icerik'], 0,100 )."...";; ?></p>
 		<p class="read-more">
 			<a href="#">Read More</a>
 		</p>
 		<div class="chip chidPositon">
-			<img src="img/profil.png" alt="Contact Person">
-			scarlett johansson
+			<img src=<?php echo "'".$userInfo['picture']."'"; ?> alt="Contact Person">
+			<?php echo $userName; ?>
 		</div>
 	</div>
 </div>
@@ -115,13 +129,15 @@ var granimInstance = new Granim({
 </script>
 <script src="js/fitty.min.js"></script>
   <script>
+$(document).ready(function(){  
+
      fitty('.description-text-grid h1', {
       minSize: 20,
       maxSize: 30,
       observeMutations: false,
     }); 
 
-
+});
   </script>
 <!--index login -->
 <?php 

@@ -19,12 +19,13 @@
 </head>
 <body>
     <div class="container">
+      <form action="" method="post" name="uptodate">
         <div class=" row yenile-sifre">
             <div class="col s12"></div>
             <h3>Şifre Yenile</h3>
             <div class="input-field col s12">
                 <i class="material-icons prefix">vpn_key</i>
-                <input id="password" type="password" class="validate">
+                <input name="npass" id="password" type="password" class="validate">
                 <label for="password">Yeni Şifreni Gir</label>
               </div>
               <div class="input-field col s12">
@@ -33,12 +34,46 @@
                 <label for="password1">Yeni Şifre Tekrar</label>
               </div>
 
-              <div class="col s12 menu-yenile-button">
-              <a class="waves-effect waves-light btn">Güncelle</a>
+              <div class="col s12 menu-yenile-button">              
+              <button type="submit" class="aves-effect waves-light btn" name="submit">Güncelle</button>
             </div>
 
         </div>
+
+      </form>
+        
     </div>
 
 </body>
 </html>
+
+
+
+
+<?php 
+include 'baglan.php';
+
+
+if (isset($_GET['hash'])) {
+    $hash = $_GET['hash'];
+    echo "asfasfas";
+    $qry = $bag->cek("","n_users","*","WHERE forget_hash=?",array($hash));
+    $rs = $qry->fetch(PDO::FETCH_OBJ);
+
+      if ($qry) {
+        echo "asfsafsafas";
+          if (isset($_POST['submit'])) {
+            echo "adsgfagsdgasd";
+            $npass = $_POST['npass'];
+            $nhash = md5(rand(0,100));
+            $update = $bag->guncelle(0,"n_users","pass,forget_hash","WHERE forget_hash=?" , array(md5($npass),$nhash,$hash));
+            header("Location:index.php");
+          }
+      }
+
+
+}
+
+
+
+ ?>

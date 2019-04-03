@@ -2,7 +2,7 @@
 /**
 * PDO db class 
 * author: Mehmet Ibrahim
-* read link for use: http://renklikodlar.net/CLASS/php_PDO_turu_veritabani_sinifi
+* read link for use: http://renklikodlar.net/class/php_pdo_turu_veritabani_sinifi-m12
 * website: http://renklikodlar.net
 */
 

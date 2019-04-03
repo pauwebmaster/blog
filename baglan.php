@@ -10,6 +10,4 @@ include"dbclass.php";
 $bag = new db();
 
 ob_end_flush();
-
-// s ve a
 ?>
