@@ -1,9 +1,9 @@
 <?php
 class User {
-	private $dbHost     = "localhost";
-    private $dbUsername = "root";
-    private $dbPassword = "";
-    private $dbName     = "myblog";
+	private $dbHost     = "us-cdbr-iron-east-03.cleardb.net";
+    private $dbUsername = "b4d75f547986fc";
+    private $dbPassword = "78e273f8";
+    private $dbName     = "heroku_aa918aba70a4844";
     private $userTbl    = 'n_users';
 	
 	function __construct(){
