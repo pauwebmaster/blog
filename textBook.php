@@ -5,11 +5,11 @@ include 'baglan.php';
 //$text_id=$_GET["text_id"];
 $text_id=$_GET["text_id"];
 $textBookInfo = $bag->cek("OBJ", "texts", "*", "WHERE id=?", array($text_id));
-$userInfo = $bag->cek("ASSOC", "n_users", "username,picture,name,surname", "WHERE id=?", array($textBookInfo->yazar_id));
+$userInfo = $bag->cek("ASSOC", "n_users", "username,picture,first_name,last_name", "WHERE id=?", array($textBookInfo->yazar_id));
 
 
-				if($userInfo['name'] != NULL && $userInfo['name'] != NULL)
-					$userName= $userInfo['name']." ".$userInfo['surname'];
+				if($userInfo['first_name'] != NULL && $userInfo['last_name'] != NULL)
+					$userName= $userInfo['first_name']." ".$userInfo['last_name'];
 				else
 					$userName=$userInfo['username'];
 

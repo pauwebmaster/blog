@@ -28,11 +28,11 @@ include 'baglan.php';
 
  // $sonuc["veriler"] dizi olduğu için döngü kurduk
 			foreach($sonuc["veriler"] as $indexKart) { 
-				$userInfo = $bag->cek("ASSOC", "n_users", "username,picture,name,surname", "WHERE id=?", array($indexKart->yazar_id));
-
-
-				if($userInfo['name'] != NULL && $userInfo['name'] != NULL)
-					$userName= $userInfo['name']." ".$userInfo['surname'];
+				$userInfo = $bag->cek("ASSOC", "n_users", "username,picture,first_name,last_name", "WHERE id=?", array($indexKart->yazar_id));
+				if(empty($userInfo))
+					echo "başarılı";
+				if($userInfo['first_name'] != NULL && $userInfo['last_name'] != NULL)
+					$userName= $userInfo['first_name']." ".$userInfo['last_name'];
 				else
 					$userName=$userInfo['username'];
 
@@ -43,17 +43,17 @@ include 'baglan.php';
 					$cardContent="kişi p etiketi yoktur";
 				}
 				
-switch ($indexKart->kategori) {
-    case "PHP":
-        $cardImgType="img/php-card-logo.svg" ;
-        break;
-    case "CSS":
-        $cardImgType="img/css3.svg" ;
-        break;
-    default:
-        $cardImgType="img/js-card-logo.svg" ;
-        
-}
+				switch ($indexKart->kategori) {
+					case "PHP":
+					$cardImgType="img/php-card-logo.svg" ;
+					break;
+					case "CSS":
+					$cardImgType="img/css3.svg" ;
+					break;
+					default:
+					$cardImgType="img/js-card-logo.svg" ;
+
+				}
 
 
 				?>
@@ -90,7 +90,7 @@ switch ($indexKart->kategori) {
 						</div>
 					</div>
 
-
+					
 
 
 					<?php
@@ -184,20 +184,22 @@ var granimInstance = new Granim({
 			observeMutations: false,
 		}); 
 
-$(".read-more a").hover(function(){ 
-$(this).css("margin-right","5px");
-$(".seeMoreIcon").show("slide","slow");
-},function(){
-$(".seeMoreIcon").hide("slide","slow");
+		$(".read-more a").hover(function(){ 
+			$(this).css("margin-right","5px");
+			$(".seeMoreIcon").show("slide","slow");
+		},function(){
+			$(".seeMoreIcon").hide("slide","slow");
 
+
+
+		});
 
 });
 
 
-
-</script>
-<!--index login -->
-<?php 
-include 'loginCard.php';
-include 'footer.php';
-?>
+	</script>
+	<!--index login -->
+	<?php 
+	include 'loginCard.php';
+	include 'footer.php';
+	?>

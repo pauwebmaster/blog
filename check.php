@@ -18,7 +18,7 @@ else
 }
 else{
 
-$user = $bag->cek("OBJ_ALL","n_users","*","WHERE name=?", array($username));
+$user = $bag->cek("OBJ_ALL","n_users","*","WHERE username=?", array($username));
 if($user)
 	echo json_encode(false);
 else

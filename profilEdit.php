@@ -11,7 +11,7 @@ session_start();
 
 $name = $_POST["name"]; 
 $last_name = $_POST["last_name"]; 
-$date = $_POST["date"]; 
+//$date = $_POST["date"]; 
 //$telefon = $_POST["telefon"]; 
 //$passwordOld = $_POST["passwordOld"]; 
 //$passwordNew = $_POST["passwordNew"]; 
@@ -26,7 +26,7 @@ $userID= 25;
 
 if (isset($_POST["action"])) {
 
-$güncelle = $bag->guncelle(0, "n_users", "name,surname,birthday,gender,bio,picture", "WHERE id=?", array("$name","$last_name","$date","$gender","$userBio","$profilUserImgFile","$userID"));
+$güncelle = $bag->guncelle(0, "n_users", "first_name,last_name,gender,bio,picture", "WHERE id=?", array("$name","$last_name","$gender","$userBio","$profilUserImgFile","$userID"));
 /*if ($güncelle) {
 echo ;
 }
