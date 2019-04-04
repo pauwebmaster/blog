@@ -14,6 +14,8 @@ $email = $_POST["email"];
 $password =$_POST["password"];
 $phone =$_POST["phone"];
 $kod = md5(rand(0,100));
+$forget_hash = md5(rand(0,100));
+$image = "img/profil/avatar1.png";
 $uye_onay = 0;
 
 //echo "name: ".$name."  email: ".$email." pass: ".$password. " date: ".$date;
@@ -31,7 +33,7 @@ else{
 
             if (recapt_curl($_POST['captchai']) === true) {
 
-                $ekle = $bag->ekle("n_users", "username,email,pass,tel_num,verif_code,onay",array("$name","$email","$password","$phone","$kod","$uye_onay"));
+                $ekle = $bag->ekle("n_users", "username,email,pass,tel_num,verif_code,onay,forget_hash,picture",array("$name","$email","$password","$phone","$kod","$uye_onay","$forget_hash","$image"));
 
                         $mail = new PHPMailer(true);
 

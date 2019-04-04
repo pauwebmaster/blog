@@ -140,7 +140,7 @@ class db {
 				$sonraki = $sayfa+1; $sayfala .="<li><a href=\"".$link.$sonraki."\">Sonraki</a></li>";
 				$sayfala .="<li><a href=\"".$link.$toplamsayfa."\">Son &raquo;</a></li>"; } 
 			}
-			return array("veriler"=>$sonuc, "sayfalar"=>$sayfala, "toplamsayfa"=>$toplamsayfa, "toplamkayit"=>$kayitSayisi);
+			 return array("veriler"=>$sonuc, "sayfalar"=>$sayfala, "toplamsayfa"=>$toplamsayfa, "toplamkayit"=>$kayitSayisi, "simdikisayfa"=>$sayfa);
 		}
 
 //hata detayları

@@ -3,14 +3,18 @@ include 'header.php';
 include 'baglan.php';
 
 //$text_id=$_GET["text_id"];
-$text_id=51;
+$text_id=$_GET["text_id"];
 $textBookInfo = $bag->cek("OBJ", "texts", "*", "WHERE id=?", array($text_id));
-$userInfo = $bag->cek("OBJ", "n_users", "username,picture,name,surname", "WHERE id=?", array($textBookInfo->yazar_id));
+$userInfo = $bag->cek("ASSOC", "n_users", "username,picture,name,surname", "WHERE id=?", array($textBookInfo->yazar_id));
 
-if(!empty($userInfo->name))
-$userName= $userInfo->name." ".$userInfo->surname;
-else
-$userName=$userInfo->username;
+
+				if($userInfo['name'] != NULL && $userInfo['name'] != NULL)
+					$userName= $userInfo['name']." ".$userInfo['surname'];
+				else
+					$userName=$userInfo['username'];
+
+
+
 ?>
 
 
@@ -23,12 +27,12 @@ $userName=$userInfo->username;
 
 		<div class="textBookUser">
 			<div class="row">
-				<div class="col s4">
-					<div class="textBookUserImg z-depth-4" style=" background-image: url(img/avatar1.svg); "></div>
+				<div class="col s2">
+					<div class="textBookUserImg z-depth-4" style=" background-image: url(<?php echo $userInfo["picture"]; ?> ); "></div>
 
 
 				</div>
-				<div class="col s8">
+				<div class="col s10">
 					<p class="textBookHeaderName"><?php echo $userName; ?></p>
 					<p class="textBookHeaderDate">Haz 03 2019</p>
 				</div>
@@ -36,7 +40,7 @@ $userName=$userInfo->username;
 		</div>
 
 		<div class="textBookHeaderBannerTypeLogo  z-depth-5"><img id="TBtur_logo" src="#" alt=""></div>
-		<div class="textBookHeaderGithubLogo"><img src="img/github.svg" alt=""></div>
+		<div class="textBookHeaderGithubLogo"><?php echo $github= !empty($textBookInfo->git_link)? '<img src="img/github.svg" alt="">': NULL  ?></div>
 
 	</div>
 
