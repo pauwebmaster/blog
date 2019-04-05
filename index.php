@@ -29,8 +29,8 @@ include 'baglan.php';
  // $sonuc["veriler"] dizi olduğu için döngü kurduk
 			foreach($sonuc["veriler"] as $indexKart) { 
 				$userInfo = $bag->cek("ASSOC", "n_users", "username,picture,first_name,last_name", "WHERE id=?", array($indexKart->yazar_id));
-				if(empty($userInfo))
-					echo "başarılı";
+				/*if(empty($userInfo))
+					echo "başarılı";*/
 				if($userInfo['first_name'] != NULL && $userInfo['last_name'] != NULL)
 					$userName= $userInfo['first_name']." ".$userInfo['last_name'];
 				else
@@ -54,10 +54,11 @@ include 'baglan.php';
 					$cardImgType="img/js-card-logo.svg" ;
 
 				}
-
-$preg = preg_match('/img/', $userInfo['picture'])? "height:37px ":"height:32px ";
+/*print_r($indexKart->icerik);
+*/$preg = preg_match('/img/', $userInfo['picture'])? "height:37px ":"height:32px ";
 
 				?>
+				
 				<div class="blog-card alt z-depth-4">
 					<div class="meta">
 						<div class="photo" style="background-image: url(  <?php echo $cardImgType; ?> );"></div>
