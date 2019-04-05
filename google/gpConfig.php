@@ -10,8 +10,8 @@ include_once 'src/contrib/Google_Oauth2Service.php';
  */
 $clientId = '879069969702-1nn8rsbd7pluvtgddad89kiejc5a9o7j.apps.googleusercontent.com'; //Google client ID
 $clientSecret = 'Am4mfTMMxTZsQq4fY-lrkEMc'; //Google client secret
-//$redirectURL = 'http://localhost/blog/'; //Callback URL
-$redirectURL = 'http://weblogpau.herokuapp.com'; //Callback URL
+$redirectURL = 'http://localhost/blog/'; //Callback URL
+// $redirectURL = 'https://weblogpau.herokuapp.com/'; //Callback URL
 
 //Call Google API
 $gClient = new Google_Client();

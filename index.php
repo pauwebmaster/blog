@@ -55,6 +55,7 @@ include 'baglan.php';
 
 				}
 
+$preg = preg_match('/img/', $userInfo['picture'])? "height:37px ":"height:32px ";
 
 				?>
 				<div class="blog-card alt z-depth-4">
@@ -84,7 +85,7 @@ include 'baglan.php';
 								<a   href= <?php echo "'textBook.php?text_id=".$indexKart->id."'";?> >Devamını Görmek İçin  <i class="fas fa-angle-double-right seeMoreIcon"></i></a>
 							</p>
 							<div class="chip chidPositon">
-								<img src=<?php echo "'".$userInfo['picture']."'"; ?> alt="Contact Person">
+								<img style= <?php echo "'".$preg."'"; ?> src= <?php echo "'".$userInfo['picture']."'"; ?> alt="Contact Person">
 								<?php echo $userName; ?>
 							</div>
 						</div>
@@ -189,17 +190,16 @@ var granimInstance = new Granim({
 			$(".seeMoreIcon").show("slide","slow");
 		},function(){
 			$(".seeMoreIcon").hide("slide","slow");
-
-
-
 		});
 
-});
 
 
-	</script>
-	<!--index login -->
-	<?php 
-	include 'loginCard.php';
-	include 'footer.php';
-	?>
+	});
+
+
+</script>
+<!--index login -->
+<?php 
+include 'loginCard.php';
+include 'footer.php';
+?>
